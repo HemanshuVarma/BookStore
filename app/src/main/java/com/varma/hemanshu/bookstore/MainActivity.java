@@ -17,11 +17,18 @@ import android.widget.TextView;
 import com.varma.hemanshu.bookstore.data.BookContract.BookEntry;
 import com.varma.hemanshu.bookstore.data.BookDbHelper;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 
 public class MainActivity extends AppCompatActivity {
 
+    @BindView(R.id.fab)
     FloatingActionButton fab;
+
+    @BindView(R.id.text_view)
     TextView mTextView;
+
     private BookDbHelper mDbHelper;
 
     //String for Logging
@@ -31,9 +38,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        fab = findViewById(R.id.fab);
-        mTextView = findViewById(R.id.text_view);
+        ButterKnife.bind(this);
 
         //Listener for FloatingActionButton
         fab.setOnClickListener(new View.OnClickListener() {

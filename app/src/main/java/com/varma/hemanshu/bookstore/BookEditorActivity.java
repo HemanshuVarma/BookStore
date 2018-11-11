@@ -13,12 +13,20 @@ import android.widget.Toast;
 import com.varma.hemanshu.bookstore.data.BookContract.BookEntry;
 import com.varma.hemanshu.bookstore.data.BookDbHelper;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class BookEditorActivity extends AppCompatActivity {
 
+    @BindView(R.id.book_name_et)
     EditText mProductName;
+    @BindView(R.id.price_et)
     EditText mPrice;
+    @BindView(R.id.quantity_et)
     EditText mQuantity;
+    @BindView(R.id.supplier_name_et)
     EditText mSupplierName;
+    @BindView(R.id.supplier_phone_et)
     EditText mSupplierPhone;
 
     //String for Log
@@ -28,12 +36,8 @@ public class BookEditorActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_editor);
+        ButterKnife.bind(this);
 
-        mProductName = findViewById(R.id.book_name_et);
-        mPrice = findViewById(R.id.price_et);
-        mQuantity = findViewById(R.id.quantity_et);
-        mSupplierName = findViewById(R.id.supplier_name_et);
-        mSupplierPhone = findViewById(R.id.supplier_phone_et);
     }
 
     @Override
